@@ -20,28 +20,31 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getData()
-        binding.imageView.setOnClickListener {
-
-        }
         sharedPreferences = getSharedPreferences("InsertAcc", MODE_PRIVATE)
         var getUss = sharedPreferences.getString("uss", "")
         binding.welcome.text ="Welcom, $getUss"
+        binding.imageView.setOnClickListener {
+            var giveUser = sharedPreferences.edit()
+            giveUser.putString("uss", getUss)
+            giveUser.apply()
+            intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun getData(){
-
+        movieAdapter = MovieAdapter(emptyList()){movie ->
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("id", movie.id)
+            startActivity(intent)
+        }
         val getVM = ViewModelProvider(this).get(MovieViewModel::class.java)
         getVM.getMovie()
-        getVM.liveDataMovie.observe(this,{
-            movieAdapter.onItemClick =  { movie ->
-                val intent = Intent(this, DetailActivity::class.java)
-                intent.putExtra("movie", movie)
-                startActivity(intent)
-                binding.rcvcon.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-                binding.rcvcon.adapter = MovieAdapter(it)
-            }
-
-
+        binding.rcvcon.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.rcvcon.adapter = movieAdapter
+        getVM.liveDataMovie.observe(this,{ movie ->
+            movieAdapter.listMovie = movie
+            movieAdapter.notifyDataSetChanged()
         })
 
     }

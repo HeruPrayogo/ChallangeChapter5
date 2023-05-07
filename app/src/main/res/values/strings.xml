@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ChallangeChapter5</string>
+    <string name="detail">Detail</string>
+    <string name="register">Register</string>
+    <string name="masukkan_username">Masukkan Username</string>
+    <string name="masukkan_email">Masukkan Email</string>
+    <string name="masukan_konfirmasi_password">Masukan Konfirmasi Password</string>
+    <string name="daftar">Daftar</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="belum_punya_akun">Belum Punya akun?</string>
+    <string name="username">Username</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="alamat">Alamat</string>
+    <string name="update">Update</string>
+    <string name="logout">Logout</string>
+    <string name="masukkan_password">Masukan Password</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
 </resources>

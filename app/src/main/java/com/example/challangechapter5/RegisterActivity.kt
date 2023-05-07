@@ -1,5 +1,6 @@
 package com.example.challangechapter5
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +25,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
     fun insertAcc(){
-        sharedPreferences = getSharedPreferences("InsertAcc", MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("InsertAcc", Context.MODE_PRIVATE)
         binding.RegistBtn.setOnClickListener {
             var getUser = binding.uss.text.toString()
             var getEmail = binding.getEmail.text.toString()

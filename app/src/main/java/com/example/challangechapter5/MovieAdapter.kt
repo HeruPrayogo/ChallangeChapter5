@@ -11,7 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.challangechapter5.databinding.ItemMovieBinding
 
 class MovieAdapter(var listMovie : List<Result>,
-                   var onItemClick: ((movie: com.example.challangechapter5.model.Result) -> Unit)? = null ) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+                   var onItemClick: ((Result) -> Unit) ) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     class ViewHolder (var binding: ItemMovieBinding): RecyclerView.ViewHolder(binding.root){
 
     }
@@ -27,7 +27,7 @@ class MovieAdapter(var listMovie : List<Result>,
         holder.binding.Tanggal.text = listMovie[position].releaseDate
         Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w500${listMovie[position].posterPath}").into(holder.binding.Poster)
         holder.binding.card.setOnClickListener{
-            onItemClick?.invoke(listMovie[position])
+            onItemClick(listMovie[position])
         }
 
     }

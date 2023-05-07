@@ -32,4 +32,4 @@ data class Result(
     val voteAverage: Double,
     @SerializedName("vote_count")
     val voteCount: Int
-):java.io.Serializable
+)

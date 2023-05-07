@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChallangeChapter5</string>
+    <string name="detail">Detail</string>
+    <string name="register">Register</string>
+    <string name="masukkan_username">Insert Username</string>
+    <string name="masukkan_email">Insert Email</string>
+    <string name="masukan_konfirmasi_password">Confirm Password</string>
+    <string name="daftar">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="belum_punya_akun">Doesn\'t have any Account?</string>
+    <string name="username">Username</string>
+    <string name="nama_lengkap">Full name</string>
+    <string name="tanggal_lahir">Birth</string>
+    <string name="alamat">Address</string>
+    <string name="update">Update</string>
+    <string name="logout">Logout</string>
+    <string name="masukkan_password">Insert Password</string>
+</resources>

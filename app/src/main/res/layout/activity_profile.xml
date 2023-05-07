@@ -4,49 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".ProfileActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="43dp"
-        android:text="@string/register"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="104dp"
+        android:text="Profile"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="124dp"
-        android:layout_height="111dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="142dp"
-        app:srcCompat="@drawable/baseline_person_24" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
-        android:layout_below="@+id/imageView3"
+        android:layout_below="@+id/textView3"
         android:layout_alignParentEnd="true"
         android:id="@+id/username"
         android:layout_marginTop="25dp">
 
-    <EditText
-        android:id="@+id/uss"
-        android:backgroundTint="#DEFDE1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="@string/masukkan_username"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <EditText
+            android:id="@+id/uss"
+            android:backgroundTint="#DEFDE1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/username"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Email"
@@ -59,11 +48,11 @@
         android:layout_marginTop="25dp">
 
         <EditText
-            android:id="@+id/getEmail"
+            android:id="@+id/Nama"
             android:backgroundTint="#DEFDE1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/masukkan_email"
+            android:hint="@string/nama_lengkap"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -72,25 +61,22 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
-        app:endIconMode="password_toggle"
         android:layout_below="@+id/Email"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="25dp">
 
         <EditText
-            android:id="@+id/pass"
-            android:inputType="textPassword"
+            android:id="@+id/TglLahir"
             android:backgroundTint="#DEFDE1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/masukkan_password"
+            android:hint="@string/tanggal_lahir"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="password_toggle"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:layout_below="@+id/RePass"
@@ -100,24 +86,31 @@
         >
 
         <EditText
-            android:id="@+id/cPass"
-            android:inputType="textPassword"
+            android:id="@+id/Alamat"
             android:layout_width="match_parent"
             android:backgroundTint="#DEFDE1"
             android:layout_height="match_parent"
-            android:hint="@string/masukan_konfirmasi_password"
+            android:hint="@string/alamat"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/RegistBtn"
-        android:layout_width="363dp"
+        android:id="@+id/Update"
+        android:layout_width="231dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ConfirmPassword"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/daftar" />
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/update" />
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="231dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Update"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/logout" />
 </RelativeLayout>

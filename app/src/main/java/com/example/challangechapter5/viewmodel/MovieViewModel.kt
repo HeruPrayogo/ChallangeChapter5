@@ -1,26 +1,25 @@
 package com.example.challangechapter5.viewmodel
 
 import com.example.challangechapter5.model.Result
-import android.graphics.Movie
-import android.widget.Toast
-import androidx.lifecycle.LiveData
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide.init
-import com.example.challangechapter5.MovieAdapter
-import com.example.challangechapter5.databinding.ActivityHomeBinding
+
 import com.example.challangechapter5.model.movieApi
 import com.example.challangechapter5.network.RetrofitClient
+
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MovieViewModel : ViewModel(){
      lateinit var liveDataMovie:MutableLiveData<List<Result>>
-
+     lateinit var liveDetail: MutableLiveData<com.example.challangechapter5.model.Result>
     init {
         liveDataMovie = MutableLiveData()
+        liveDetail = MutableLiveData()
     }
     fun getMovie() {
         RetrofitClient.instance.getPopularMovies(
@@ -45,4 +44,23 @@ class MovieViewModel : ViewModel(){
 
 
     }
+    fun getMovieDetail(movieId:Int) {
+            RetrofitClient.instance.getMovieDetails(movieId, "e73ba4baa44323fa06e5497760f26ab5")
+                .enqueue(object : Callback<com.example.challangechapter5.model.Result> {
+                    override fun onResponse(call: Call<Result>, response: Response<Result>) {
+                        if (response.isSuccessful) {
+                            val movie = response.body()
+                            liveDetail.value = movie
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Result>, t: Throwable) {
+                        liveDataMovie.value = emptyList()
+                    }
+
+                })
+    }
+
+
+
 }
